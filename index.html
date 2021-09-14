@@ -1,7 +1,7 @@
  
 <html>
   <head>
-    <title>HAND GESTURE WEB APP</title>
+    <title>Emotion To Emoji</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -18,53 +18,44 @@
   
     <center>
 
-      <h3 class="btn btn-info heading">HAND GESTURE To Emoji
+      <h3 class="btn btn-warning heading">Emotion To Emoji App
       <br>
-      <span>&#128076;</span>
-      <span>&#128077;</span>
-      <span>&#9996;</span>
-      <span>&#9994;</span>
-      <span>&#128079;</span>
-      <span>&#129304;</span>
+      <span>&#128522;</span>
+      <span>&#128512;</span>
+      <span>&#128532;</span>
+      <span>&#128546;</span>
+      <span>&#128545;</span>
+      <span>&#128548;</span>
     </h3>
-    <br><br>
       <center>
+      <br><br>
 
-      <p style="font-size: 22px;">Take a selfie of a gesture to know about its meaning
+      <p style="font-size: 22px;">Take your selfie to generate emoji
       	<br>
-        On the following gestures the model is trained - 
+        <b style="color: yellow">Are you Happy?</b>
         <br>
-        <span>&#128076;</span>
-         | 
-        <span>&#128077;</span>
-         | 
-        <span>&#9996;</span>
-         | 
-        <span>&#9994;</span>
-         | 
-        <span>&#128079;</span>
-         | 
-        <span>&#129304;</span>
+        <b style="color: black">Are you Sad?</b>
+        <br>
+        <b style="color: red">Are you Angry?</b>
+        <br>
       </p>
-      <br><br>
       
-      <br><br>
       <div class="col-md-4 col-sm-12 col-xs-12">
         <label> Webcam View - </label>
         <div id="camera"></div>
         <br><br>
-        <button onclick="take_snapshot();" class="btn btn-primary">Capture Image</button>
-        <br>
+        <button onclick="take_snapshot();" class="btn btn-warning">Capture Image</button>
         </div>
 
-      
-
         <div class="col-md-4 col-sm-12 col-xs-12">
-          <br><br>
-          <label>Prediction -  </label>
+          <label>Prediction 1 - </label>
           <p class="emotion_name" id="result_emotion_name"></p>
           <p class="emoji" id="update_emoji"></p>
-          <br>
+
+          <label>Prediction 2 - </label>
+          <p class="emotion_name" id="result_emotion_name2"></p>
+          <p class="emoji" id="update_emoji2"></p>
+
         </div>
 
       <div class="col-md-4 col-sm-12 col-xs-12">

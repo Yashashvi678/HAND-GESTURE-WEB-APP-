@@ -1,7 +1,7 @@
 body
 {
   color: white;
-  background: #9B0253;
+  background: #c0d3ff;
 }
 span
 {
@@ -9,7 +9,7 @@ span
 }
 #camera , #result
 {
-  border: 2px dashed rgb(255, 255, 255);
+  border: 2px dashed black;
   width: 350px;
   height: 300px; 
 }
