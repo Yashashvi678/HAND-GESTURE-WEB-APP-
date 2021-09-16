@@ -1,5 +1,4 @@
-prediction_1 = ""
-prediction_2 = ""
+prediction = ""
 
 Webcam.set({
     width:350,
@@ -20,7 +19,7 @@ function take_snapshot()
 
 console.log('ml5 version: ', ml5.version);
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/DqKz7AsXy/model.json', modelLoaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/Eep2Da_E3/model.json', modelLoaded);
 
 function modelLoaded()
 {
@@ -30,11 +29,11 @@ function modelLoaded()
 function speak()
 {
     var synth = window.speechSynthesis;
-    speak_data_1 = "The First Prediction Is " + prediction_1;
-    speak_data_2 = "And The Second Prediction Is" + prediction_2;
-    var utterThis = new SpeechSynthesisUtterance(speak_data_1 + speak_data_2);
+    speak_data = "This Gesture Means - " + prediction;
+    var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis);
 }
+
 
 function check()
 {
@@ -49,33 +48,31 @@ function gotResult(error, results)
     } else {
         console.log(results);
         document.getElementById("result_emotion_name").innerHTML = results[0].label;
-        document.getElementById("result_emotion_name2").innerHTML = results[1].label;
-        prediction_1 = results[0].label;
-        prediction_2 = results[1].label;
+        prediction = results[0].label;
         speak();
-        if (results[0].label == "Happy")
+        if (results[0].label == "AMAZING")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128522;";
+            document.getElementById("emoji_update").innerHTML = "&#128076;";
         }
-        if (results[0].label == "Sad")
+        if (results[0].label == "ALL THE BEST")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128532;";
+            document.getElementById("emoji_update").innerHTML = "&#128077;";
         }
-        if (results[0].label == "Angry")
+        if (results[0].label == "MARVELOUS VICTORY")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128548;";
+            document.getElementById("emoji_update").innerHTML = "&#9996;";
         }
-        if (results[1].label == "Happy")
+        if (results[0].label == "RAISED FIST")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128522;";
+            document.getElementById("emoji_update").innerHTML = "&#9994;";
         }
-        if (results[1].label == "Sad")
+        if (results[0].label == "SIGN OF THE HORNS")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128532;";
+            document.getElementById("emoji_update").innerHTML = "&#129304;";
         }
-        if (results[1].label == "Angry")
+        if (results[0].label == "CLAPPING")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128548;";
+            document.getElementById("emoji_update").innerHTML = "&#128079;";
         }
     }
 }
